@@ -8,14 +8,13 @@ const measureString = function (yourString) {
 
 measureString('1235678901234567890');
 
-const getRandomInt = function (minValue, maxValue) {
-  const minV = Math.min(minValue, maxValue);
-  const maxV = Math.max(minValue, maxValue);
-  return Math.floor(Math.random() * (maxV - minV)) + minV;
+const getRandomInt = function (firstValue, secondValue) {
+  const minValue = Math.min(firstValue, secondValue);
+  const maxValue = Math.max(first, secondValue);
+  return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 }
 
 getRandomInt(90, 17)
-
 const DESCRIPTIONS = [
   'Отлично',
   'Замечательно',
