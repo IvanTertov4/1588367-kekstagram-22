@@ -41,11 +41,7 @@ const createComment = function () {
   };
 };
 
-createComment()
-
-const COMMENTS = new Array(4).fill(null).map(() => createComment());
-
-
+const COMMENTS = new Array(1).fill(null).map(() => createComment());
 
 const createUserPicture = function (commentsValue) {
   const USERSPICTURES = [];
@@ -63,6 +59,5 @@ const createUserPicture = function (commentsValue) {
   return USERSPICTURES;
 };
 
-let COMMENTSANDPICTURES = createUserPicture(COMMENTS);
-export {COMMENTSANDPICTURES};
+export {createUserPicture, COMMENTS};
 

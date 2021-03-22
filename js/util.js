@@ -1,4 +1,4 @@
-let maxStringLenght = 140;
+const maxStringLenght = 140;
 
 const measureString = function (yourString) {
   let allString = String(yourString);
@@ -6,14 +6,15 @@ const measureString = function (yourString) {
   return (allString <= maxStringLenght);
 };
 
-measureString('1235678901234567890');
-
 const getRandomInt = function (firstValue, secondValue) {
   const minValue = Math.min(firstValue, secondValue);
   const maxValue = Math.max(firstValue, secondValue);
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 }
 
-getRandomInt(90, 17)
+const isEscEvent = function (evt) {
+  return evt.key === 'Escape' || evt.key === 'Esc';
+};
 
-export {measureString, getRandomInt};
+
+export {measureString, getRandomInt, isEscEvent };
