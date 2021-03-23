@@ -1,10 +1,10 @@
-import {createUserPicture, COMMENTS} from './data.js';
+import {createUserPicture} from './data.js';
 
 const picturesWindow = document.querySelector('.pictures');
 
 const pictureTemplate =  document.querySelector('#picture').content.querySelector('.picture');
 
-const similarPictures = createUserPicture(COMMENTS);
+const similarPictures = createUserPicture();
 
 const similarListFragment = document.createDocumentFragment();
 

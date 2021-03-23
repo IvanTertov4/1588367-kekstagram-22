@@ -32,20 +32,25 @@ const MASSAGES = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
 ];
 
-const createComment = function () {
-  return {
-    id: getRandomInt(0, 200),
-    avatar: 'img/avatar-' + getRandomInt(1,6) + '.svg',
-    message: MASSAGES[getRandomInt(0, MASSAGES.length - 1)],
-    name: NAMES[getRandomInt(0, NAMES.length - 1)],
-  };
-};
+const createComment = function (commentsAmount) {
+  const COMMENTS = [];
+  for (let i = 1; i <= commentsAmount; i++) {
+    const userComment = {
+      id: i,
+      avatar: 'img/avatar-' + getRandomInt(1,6) + '.svg',
+      message: MASSAGES[getRandomInt(1, MASSAGES.length - 1)],
+      name: NAMES[getRandomInt(1, NAMES.length - 1)],
+    }
+    COMMENTS.push(userComment);
+  }
 
-const COMMENTS = new Array(1).fill(null).map(() => createComment());
+  return COMMENTS;
+};
 
 const createUserPicture = function (commentsValue) {
   const USERSPICTURES = [];
   for (let i = 1; i <= 25; i++) {
+    commentsValue = createComment(getRandomInt(1, 10));
     const userPicture = {
       id: i,
       url: 'photos/' + i + '.jpg',
@@ -59,5 +64,7 @@ const createUserPicture = function (commentsValue) {
   return USERSPICTURES;
 };
 
-export {createUserPicture, COMMENTS};
+console.log(createUserPicture());
+
+export {createUserPicture};
 
