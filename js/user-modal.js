@@ -5,7 +5,7 @@ const openButtonBPMode = document.querySelector('.picture');
 openButtonBPMode.addEventListener('click', function(evt){
   evt.preventDefault();
   bigPictureMode.classList.remove('hidden');
-  
+
   document.addEventListener('keydown', (evt) => {
     if (evt.key === ('Escape' || 'Esc')) {
       evt.preventDefault();
