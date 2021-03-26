@@ -1,20 +1,26 @@
 const bigPictureMode = document.querySelector('.big-picture');
 const closeButtonBPMode = document.querySelector('.big-picture__cancel');
 const openButtonBPMode = document.querySelector('.picture');
-
-openButtonBPMode.addEventListener('click', function(evt){
+const listenerOpen = function (evt) {
   evt.preventDefault();
   bigPictureMode.classList.remove('hidden');
 
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === ('Escape' || 'Esc')) {
-      evt.preventDefault();
-      bigPictureMode.classList.add('hidden');
-    }
-  });
-})
-
-closeButtonBPMode.addEventListener('click', function (evt) {
+};
+const listenerClose = function (evt) {
   evt.preventDefault();
   bigPictureMode.classList.add('hidden');
-})
+
+};
+const keyListenerClose = function (evt) {
+  if (evt.keyCode === 27) {
+    bigPictureMode.classList.add('hidden');
+  }
+
+};
+
+openButtonBPMode.addEventListener('click', listenerOpen);
+
+closeButtonBPMode.addEventListener('click', listenerClose);
+
+document.addEventListener('keydown', keyListenerClose);
+
