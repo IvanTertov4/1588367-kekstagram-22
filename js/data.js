@@ -64,7 +64,5 @@ const createUserPicture = function (commentsValue) {
   return USERSPICTURES;
 };
 
-console.log(createUserPicture());
-
 export {createUserPicture};
 
