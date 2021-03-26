@@ -14,27 +14,26 @@ const checkInputValue = function (checkingValue) {
 }
 
 const editInputValue = function (editingValue, valueDelta) {
-  let outputEditingValue = editingValue;
-  if ((parseInt(editingValue) === 0) || (parseInt(editingValue) === 100)) {
-    outputEditingValue = editingValue;
-  } else {
-    outputEditingValue = checkInputValue(editingValue) + valueDelta;
-  }
+  if ((editingValue <= 0) && (editingValue > 100)) valueDelta = 0;
+  let outputEditingValue = editingValue + valueDelta;
   return outputEditingValue;
 }
 
 inputControlValue.value = 100;
 
 reduceValueButton.addEventListener('click', function () {
-  inputControlValue.value = editInputValue(inputControlValue.value, -25);
-  console.log(inputControlValue.value);
-  return inputControlValue.value;
+  inputControlValue.value = editInputValue(checkInputValue(parseInt(inputControlValue.value)), -25);
+  doZoom(inputControlValue.value);
 });
 
 enlargeValueButton.addEventListener('click', function () {
-  inputControlValue.value = editInputValue(inputControlValue.value, 25);
-  console.log(inputControlValue.value);
+  inputControlValue.value = editInputValue(checkInputValue(parseInt(inputControlValue.value)), 25);
+  doZoom(inputControlValue.value);
 });
 
-console.log( editInputValue('0', 25))
+const doZoom = function (zoomValue) {
+  let workingValue = zoomValue / 100;
+  changingPicture.style.transform = `scale(${workingValue})`;
+}
+
 
