@@ -10,10 +10,6 @@ const getRandomInt = function (firstValue, secondValue) {
   return Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 }
 
-const isEscEvent = function (evt) {
-  return evt.key === 'Escape' || evt.key === 'Esc';
-};
-
 const hashtagCheck = function (inputStr) {
   if (inputStr.length === 0) return true;
   let strParts = inputStr.split(' ').map((item) => item.toLowerCase());
@@ -32,5 +28,5 @@ const hashtagCheck = function (inputStr) {
   return true;
 }
 
-export {measureString, getRandomInt, isEscEvent, hashtagCheck };
+export {measureString, getRandomInt, hashtagCheck};
 

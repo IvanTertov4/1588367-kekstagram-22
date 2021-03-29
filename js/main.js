@@ -5,4 +5,6 @@ import './castomization-zoom.js';
 import './castomization-modal.js';
 import './validation-check.js'
 import './server-cooperation.js';
-import './results-info.js'
+import './results-info.js';
+import './filtration.js';
+import './data-working.js';

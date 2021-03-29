@@ -44,8 +44,5 @@ const doSuccessMessage = function () {
   })
 }
 
-doSuccessMessage()
-
-
 export {doErrorMessage, doSuccessMessage};
 
