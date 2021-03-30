@@ -16,7 +16,9 @@ const renderFilter = function () {
       buttonDiscussed.classList.remove('img-filters__button--active')
     }
     buttonDefault.classList.add('img-filters__button--active');
-    while (picturesWindow.children.length > 2) picturesWindow.removeChild(picturesWindow.lastChild);
+    while (picturesWindow.children.length > 2) {
+      picturesWindow.removeChild(picturesWindow.lastChild)
+    }
     renderPictures(getDefault());
   }
 
@@ -42,7 +44,9 @@ const renderFilter = function () {
       buttonRandom.classList.remove('img-filters__button--active')
     }
     document.getElementById('filter-discussed').classList.add('img-filters__button--active');
-    while (picturesWindow.children.length > 2) picturesWindow.removeChild(picturesWindow.lastChild);
+    while (picturesWindow.children.length > 2) {
+      picturesWindow.removeChild(picturesWindow.lastChild)
+    }
     renderPictures(getSortedComments());
   }
 

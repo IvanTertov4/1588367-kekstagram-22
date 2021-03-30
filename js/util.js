@@ -25,7 +25,9 @@ const hashtagCheck = function (inputStr) {
     }
     if (item.length > 20) {
       validationResult = false
-    } else validationResult = /^#[a-z0-9а-я-яё]+$/.test(item);
+    } else {
+      validationResult = /^#[a-z0-9а-я-яё]+$/.test(item)
+    }
   });
   if (!validationResult) {
     return false
