@@ -4,16 +4,22 @@ const inputTextArea = document.querySelector('.text__description');
 
 const checkHashtage = function () {
   const result = hashtagCheck(inputHashtage.value);
-  if (result) inputHashtage.style.border = 'none';
-  else inputHashtage.style.border = '3px solid red';
-  return result
+  if (result) {
+    inputHashtage.style.border = 'none';
+  } else {
+    inputHashtage.style.border = '3px solid red';
+  }
+  return result;
 }
 
 const checkTextArea = function () {
   const result = measureString(inputTextArea.value, 140);
-  if (result) inputTextArea.style.border = 'none';
-  else inputTextArea.style.border = '3px solid red';
-  return result
+  if (result) {
+    inputTextArea.style.border = 'none';
+  } else {
+    inputTextArea.style.border = '3px solid red';
+  }
+  return result;
 }
 
 

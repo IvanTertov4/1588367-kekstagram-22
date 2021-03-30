@@ -18,8 +18,12 @@ const closeListener = function () {
 }
 
 const keyListenerClose = function (evt) {
-  if (document.activeElement === document.querySelector('.text__hashtags')) return ;
-  if (document.activeElement === document.querySelector('.text__description')) return;
+  if (document.activeElement === document.querySelector('.text__hashtags')) {
+    return
+  }
+  if (document.activeElement === document.querySelector('.text__description')) {
+    return
+  }
   if (evt.keyCode === 27) {
     document.querySelector('.img-upload__overlay').classList.add('hidden');
     document.body.classList.remove('modal-open');
@@ -34,7 +38,9 @@ const afterSending = function () {
 
 const sendingForm = function () {
   const form = document.getElementById('upload-select-image')
-  if (inputChecking()) postData(form).then(ok => { if (ok) {afterSending(); doSuccessMessage()} else{doErrorMessage()}}).catch(doErrorMessage)
+  if (inputChecking()) {
+    postData(form).then(ok => { if (ok) {afterSending(); doSuccessMessage()} else{doErrorMessage()}}).catch(doErrorMessage)
+  }
 }
 
 uploadField.addEventListener('change', uploadListener);

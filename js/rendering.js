@@ -13,7 +13,9 @@ const listenerClose = function (evt) {
   closeBPMode();
 };
 const keyListenerClose = function (evt) {
-  if (evt.keyCode === 27) closeBPMode();
+  if (evt.keyCode === 27) {
+    closeBPMode();
+  }
 };
 
 closeButtonBPMode.addEventListener('click', listenerClose);
@@ -39,29 +41,31 @@ const renderPictures = function(inputingData) {
       bigPictureModeLikes.textContent = `${likes}`;
       let commentsList = document.querySelector('.social__comments');
       while (commentsList.firstChild) {
-        commentsList.removeChild(commentsList.firstChild)
+        commentsList.removeChild(commentsList.firstChild);
       }
 
-      document.querySelector('.comments-loader').classList.remove('hidden')
-      let count = 0
-      document.querySelector('.comments-count').textContent = comments.length
+      document.querySelector('.comments-loader').classList.remove('hidden');
+      let count = 0;
+      document.querySelector('.comments-count').textContent = comments.length;
       const doComments = function () {
         let maxcount = Math.min(count + 5,comments.length);
         while (count < maxcount) {
-          const newCommentAvatar = document.createElement('img')
-          newCommentAvatar.classList.add('social__picture')
-          newCommentAvatar.src = comments[count].avatar
-          newCommentAvatar.alt = comments[count].name
-          const newCommentLi = document.createElement('li')
-          newCommentLi.classList.add('social__comment')
-          const newComment = document.createElement('p')
-          newComment.textContent = comments[count].message
-          newCommentLi.appendChild(newCommentAvatar)
-          newCommentLi.appendChild(newComment)
-          document.querySelector('.social__comments').append(newCommentLi)
+          const newCommentAvatar = document.createElement('img');
+          newCommentAvatar.classList.add('social__picture');
+          newCommentAvatar.src = comments[count].avatar;
+          newCommentAvatar.alt = comments[count].name;
+          const newCommentLi = document.createElement('li');
+          newCommentLi.classList.add('social__comment');
+          const newComment = document.createElement('p');
+          newComment.textContent = comments[count].message;
+          newCommentLi.appendChild(newCommentAvatar);
+          newCommentLi.appendChild(newComment);
+          document.querySelector('.social__comments').append(newCommentLi);
           count++;
         }
-        if (count === comments.length) document.querySelector('.comments-loader').classList.add('hidden')
+        if (count === comments.length) {
+          document.querySelector('.comments-loader').classList.add('hidden')
+        }
       }
       document.querySelector('.comments-loader').addEventListener('click', doComments);
       doComments()

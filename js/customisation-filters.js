@@ -22,7 +22,9 @@ const handler = (id) => {
   }
   currentId = id;
   document.getElementById(currentId).checked = true;
-  if (currentId === 'effect-none') return;
+  if (currentId === 'effect-none') {
+    return
+  }
   const filter = FILTERS[currentId];
   noUiSlider.create(sliderElement, {
     range: filter.range,

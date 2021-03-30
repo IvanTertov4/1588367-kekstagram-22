@@ -16,7 +16,9 @@ const doErrorMessage = function () {
   })
 
   document.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 27) document.body.children[0].removeChild( document.body.children[0].lastChild)
+    if (evt.keyCode === 27) {
+      document.body.children[0].removeChild( document.body.children[0].lastChild)
+    }
   })
 }
 
@@ -40,7 +42,9 @@ const doSuccessMessage = function () {
   })
 
   document.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 27) document.body.children[0].removeChild(document.body.children[0].lastChild)
+    if (evt.keyCode === 27) {
+      document.body.children[0].removeChild(document.body.children[0].lastChild)
+    }
   })
 }
 

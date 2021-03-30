@@ -14,7 +14,9 @@ const checkInputValue = function (checkingValue) {
 }
 
 const editInputValue = function (editingValue, valueDelta) {
-  if ((editingValue <= 0) && (editingValue > 100)) valueDelta = 0;
+  if ((editingValue <= 0) && (editingValue > 100)) {
+    valueDelta = 0
+  }
   let outputEditingValue = editingValue + valueDelta;
   return outputEditingValue;
 }
