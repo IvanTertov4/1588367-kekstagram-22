@@ -1,3 +1,4 @@
+/* global noUiSlider:readonly */
 const FILTERS = {
   'effect-chrome': {id: 'effect-chrome', func: 'grayscale', suf: '', range: {min: 0, max: 1}, step: 0.1},
   'effect-sepia': {id: 'effect-sepia', func: 'sepia', suf: '', range: {min: 0, max: 1}, step: 0.1},
@@ -11,7 +12,7 @@ let currentId = 'effect-none';
 
 const sliderElement  = document.querySelector('.effect-level__slider');
 const changingPicture = document.querySelector('.img-upload__preview').children[0];
-const valueElement = document.querySelector('.effect-level__value');
+const valueElement = document.querySelector('.effect-level__value')
 
 const handler = (id) => {
   if (currentId !== 'effect-none') {
