@@ -12,7 +12,7 @@ let currentId = 'effect-none';
 
 const sliderElement  = document.querySelector('.effect-level__slider');
 const changingPicture = document.querySelector('.img-upload__preview').children[0];
-const valueElement = document.querySelector('.effect-level__value')
+const valueElement = document.querySelector('.effect-level__value');
 
 const handler = (id) => {
   if (currentId !== 'effect-none') {
