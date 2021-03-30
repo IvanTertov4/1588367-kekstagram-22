@@ -39,7 +39,7 @@ const afterSending = function () {
 const sendingForm = function () {
   const form = document.getElementById('upload-select-image')
   if (inputChecking()) {
-    postData(form).then(ok => { if (ok) {afterSending(); doSuccessMessage()} else{doErrorMessage()}}).catch(doErrorMessage)
+    postData(form).then(ok => { if (ok) {afterSending(); doSuccessMessage()} else{doErrorMessage()}}).catch(doErrorMessage())
   }
 }
 
